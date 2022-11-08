@@ -1,0 +1,5 @@
+(library
+ (public_name ocaml_kube)
+ (libraries core)
+ (preprocess (pps ppx_jane))
+ (name ocaml_kube))

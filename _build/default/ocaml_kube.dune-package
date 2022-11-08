@@ -1,0 +1,135 @@
+(lang dune 3.4)
+(name ocaml_kube)
+(sections (lib .) (libexec .))
+(files
+ (lib
+  (META
+   deployment.ml
+   deployment.mli
+   dune-package
+   key_to_path.ml
+   key_to_path.mli
+   label_selector.ml
+   label_selector.mli
+   object.ml
+   object.mli
+   object_meta.ml
+   object_meta.mli
+   ocaml_kube.a
+   ocaml_kube.cma
+   ocaml_kube.cmi
+   ocaml_kube.cmt
+   ocaml_kube.cmx
+   ocaml_kube.cmxa
+   ocaml_kube.ml
+   ocaml_kube__Deployment.cmi
+   ocaml_kube__Deployment.cmt
+   ocaml_kube__Deployment.cmti
+   ocaml_kube__Deployment.cmx
+   ocaml_kube__Key_to_path.cmi
+   ocaml_kube__Key_to_path.cmt
+   ocaml_kube__Key_to_path.cmti
+   ocaml_kube__Key_to_path.cmx
+   ocaml_kube__Label_selector.cmi
+   ocaml_kube__Label_selector.cmt
+   ocaml_kube__Label_selector.cmti
+   ocaml_kube__Label_selector.cmx
+   ocaml_kube__Object.cmi
+   ocaml_kube__Object.cmt
+   ocaml_kube__Object.cmti
+   ocaml_kube__Object.cmx
+   ocaml_kube__Object_meta.cmi
+   ocaml_kube__Object_meta.cmt
+   ocaml_kube__Object_meta.cmti
+   ocaml_kube__Object_meta.cmx
+   ocaml_kube__Pod.cmi
+   ocaml_kube__Pod.cmt
+   ocaml_kube__Pod.cmti
+   ocaml_kube__Pod.cmx
+   ocaml_kube__Redis.cmi
+   ocaml_kube__Redis.cmt
+   ocaml_kube__Redis.cmx
+   ocaml_kube__Volume.cmi
+   ocaml_kube__Volume.cmt
+   ocaml_kube__Volume.cmti
+   ocaml_kube__Volume.cmx
+   opam
+   pod.ml
+   pod.mli
+   redis.ml
+   volume.ml
+   volume.mli))
+ (libexec (ocaml_kube.cmxs)))
+(library
+ (name ocaml_kube)
+ (kind normal)
+ (archives (byte ocaml_kube.cma) (native ocaml_kube.cmxa))
+ (plugins (byte ocaml_kube.cma) (native ocaml_kube.cmxs))
+ (native_archives ocaml_kube.a)
+ (requires
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  typerep
+  variantslib
+  ppx_expect.collector
+  ppx_expect.config
+  ppx_log.types
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Ocaml_kube)
+ (modes byte native)
+ (modules
+  (wrapped
+   (main_module_name Ocaml_kube)
+   (modules
+    ((name Deployment)
+     (obj_name ocaml_kube__Deployment)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Key_to_path)
+     (obj_name ocaml_kube__Key_to_path)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Label_selector)
+     (obj_name ocaml_kube__Label_selector)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Object)
+     (obj_name ocaml_kube__Object)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Object_meta)
+     (obj_name ocaml_kube__Object_meta)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Pod) (obj_name ocaml_kube__Pod) (visibility public) (impl) (intf))
+    ((name Redis) (obj_name ocaml_kube__Redis) (visibility public) (impl))
+    ((name Volume)
+     (obj_name ocaml_kube__Volume)
+     (visibility public)
+     (impl)
+     (intf)))
+   (alias_module
+    (name Ocaml_kube)
+    (obj_name ocaml_kube)
+    (visibility public)
+    (kind alias)
+    (impl))
+   (wrapped true))))
