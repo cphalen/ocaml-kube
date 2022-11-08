@@ -1,1 +1,0 @@
-../../../../default/lib/object_meta.mli

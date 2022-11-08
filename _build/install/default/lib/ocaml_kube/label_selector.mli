@@ -1,1 +1,0 @@
-../../../../default/lib/label_selector.mli
